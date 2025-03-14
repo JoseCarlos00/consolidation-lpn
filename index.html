@@ -147,7 +147,7 @@
       <li>
         <span class="mark"></span>
         <label>
-          <input type="checkbox" hidden="hidden" data-sts="default">
+          <input type="checkbox" hidden="hidden" data-sts="susses">
           <a href="#escenario16">Escenario 16:</a><span class="description"></span>
         </label>
       </li>
@@ -155,7 +155,7 @@
       <li>
         <span class="mark"></span>
         <label>
-          <input type="checkbox" hidden="hidden" data-sts="default">
+          <input type="checkbox" hidden="hidden" data-sts="susses">
           <a href="#escenario17">Escenario 17:</a><span class="description"></span>
         </label>
       </li>
@@ -163,7 +163,7 @@
       <li>
         <span class="mark"></span>
         <label>
-          <input type="checkbox" hidden="hidden" data-sts="default">
+          <input type="checkbox" hidden="hidden" data-sts="susses">
           <a href="#escenario18">Escenario 18:</a><span class="description"></span>
         </label>
       </li>
@@ -171,12 +171,12 @@
       <li>
         <span class="mark"></span>
         <label>
-          <input type="checkbox" hidden="hidden" data-sts="default">
+          <input type="checkbox" hidden="hidden" data-sts="susses">
           <a href="#escenario19">Escenario 19:</a><span class="description"></span>
         </label>
       </li>
 
-      <li>
+      <li hidden>
         <span class="mark"></span>
         <label>
           <input type="checkbox" hidden="hidden" data-sts="default">
@@ -700,8 +700,10 @@
 
       <p><strong>Resultado Esperado:</strong></p>
       <ul>
-        <small>Verificar mensaje de error</small>
-        <li>El sistema muestra un error:
+
+        <li>
+          El sistema lanza un
+          <code>alert()</code> <br> con el mensaje:
           <code>Source LPN does not have enough quantity to move specified
           quantity. Cannot Merge LPN.</code>
         </li>
@@ -709,8 +711,8 @@
 
       <p><strong class="underline">Resultados Obtenidos</strong></p>
       <ul>
-        <li>No se muestra ningún mensaje de error y continua de consolidación de LPN.<strong> Ajustado el
-            TO_LPN</strong>
+        <li>
+          El sistema lanza el error esperado y continua el proceso de consolidación de LPN.
         </li>
       </ul>
     </div>
@@ -746,8 +748,8 @@
 
       <p><strong class=" underline">Resultados Obtenidos</strong></p>
       <ul>
-        <li>La cantidad del LPN "from merge" no se reduce correctamente.</li>
-        <li>El LPN "from merge" se elimina.</li>
+        <li>La cantidad del LPN "from merge" se reduce correctamente.</li>
+        <li>El LPN "from merge" se ajusta correctamente sin eliminarlo.</li>
         <li>El proceso de consolidación de LPN finaliza.</li>
       </ul>
     </div>
@@ -761,7 +763,7 @@
     <!-- Escenario 16 -->
     <div>
       <h3>
-        Escenario 16: Consolidación exitosa con eliminación de LPN &quot;from merge&quot; ❎
+        Escenario 16: Consolidación exitosa con eliminación de LPN &quot;from merge&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -800,7 +802,7 @@
     <!-- Escenario 17 -->
     <div>
       <h3>
-        Escenario 17: Consolidación parcial con ajuste negativo en LPN &quot;from merge&quot; ❎
+        Escenario 17: Consolidación parcial con ajuste negativo en LPN &quot;from merge&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -819,8 +821,10 @@
         <li>Validar que los datos sean correctos.</li>
         <li>Ajustar la cantidad en el LPN &quot;to merge&quot;.</li>
         <li>Validar que la cantidad fusionada es menor a la cantidad original del LPN &quot;from merge&quot;.</li>
-        <li>Realizar un ajuste negativo en el LPN &quot;from merge&quot; para reflejar la nueva cantidad.<ul>
-            <li><span class="important">Validaciones:</span>
+        <li>Realizar un ajuste negativo en el LPN &quot;from merge&quot; para reflejar la nueva cantidad.
+          <ul>
+            <li>
+              <span>Validaciones:</span>
               <ul>
                 <li>Si la cantidad en el LPN &quot;from merge&quot; es menor a cero, <strong>¿mostrar un mensaje de
                     error
@@ -846,10 +850,10 @@
 
       <p><strong>Resultados Obtenidos</strong></p>
       <ul>
-        <li>La cantidad del LPN &quot;from merge&quot; no se reduce correctamente.</li>
-        <li>El LPN &quot;from merge&quot; se elimina</li>
-        <li>El LPM &quot;to merge&quot; ajusta correctamente.</li>
-        <li>El FROM_LPN se <strong>consolida</strong> con el TO_LPN.</li>
+        <li>La cantidad del LPN &quot;from merge&quot; se reduce correctamente.</li>
+        <li>El LPN &quot;from merge&quot; no se elimina, ya que todavía tiene inventario restante.</li>
+        <li>El LPM &quot;to merge&quot; ajusta correctamente la cantidad.</li>
+        <li>El FROM_LPN se <strong>consolida</strong>parcialmente con el TO_LPN.</li>
       </ul>
     </div>
 
@@ -868,17 +872,27 @@
       <p><strong>Descripción del escenario:</strong></p>
       <ul>
         <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
-        <li>El LPN "from merge" es un numero entero positivo</li>
+        <li>Al consolidar FROM_LOCATION con TO_LOCATION, FROM_LOCATION queda vacía.</li>
+        <li>El proceso de consolidación se completa correctamente.</li>
       </ul>
 
       <p><strong>Pasos:</strong></p>
-      <ol></ol>
+      <ol>
+        <li>El sistema detecta que FROM_LOCATION queda vacía después de la consolidación.</li>
+        <li>El sistema actualiza el estatus de la ubicación FROM_LOCATION a <code>Empty</code>.</li>
+      </ol>
 
       <p><strong>Resultado Esperado:</strong></p>
-      <ul></ul>
+      <ul>
+        <li>El proceso de consolidación se completa correctamente.</li>
+        <li>El estatus de la ubicación FROM_LOCATION se actualiza correctamente a <code>Empty</code>.
+      </ul>
 
       <p><strong>Resultados Obtenidos</strong></p>
-      <ul></ul>
+      <ul>
+        <li>El proceso de consolidación se completa correctamente.</li>
+        <li>El estatus de la ubicación FROM_LOCATION se actualiza correctamente a <code>Empty</code>.
+      </ul>
     </div>
 
     <hr class="separate" id="escenario19">
@@ -910,14 +924,17 @@
 
       <p><strong>Resultado Esperado:</strong></p>
       <ul>
-        <li>El sistema lanza un <code>alert()</code>con el mensaje:
+        <li>El sistema lanza un <code>alert()</code>con el mensaje: <br>
           <code>Destination LPN does not have the same inventory status. Cannot Merge LPN.</code>
+          <br><br>
         </li>
-        <li>El sistema muestra el error esperado y continua el proceso de consolidación de LPN.</li>
+        <li>El sistema no permite la consolidación de LPN y continua con el proceso</li>
       </ul>
 
       <p><strong>Resultados Obtenidos</strong></p>
-      <ul></ul>
+      <ul>
+        <li>El sistema muestra el error esperado y continua el proceso de consolidación de LPN.</li>
+      </ul>
     </div>
 
     <hr class="separate" id="escenario20">
@@ -934,37 +951,30 @@
       <ul></ul>
 
       <p><strong>Pasos:</strong></p>
-      <ol></ol>
+      <ol>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
+        <li>Verificar que el FROM_LPN y el TO_LPN estén en los estados correctos</li>
+        <li>Verificar si es una Consolidación de LPN <strong><i>completa</i></strong> o <strong><i>parcial</i></strong>
+        </li>
+      </ol>
 
       <p><strong>Resultado Esperado:</strong></p>
-      <ul></ul>
+      <ul>
+        <li>El sistema lanza un <code>alert()</code>con el mensaje: <br>
+          <code>Destination LPN does not have the same inventory status. Cannot Merge LPN.</code>
+          <br><br>
+        </li>
+        <li>El sistema no permite la consolidación de LPN y continua con el proceso</li>
+      </ul>
 
       <p><strong>Resultados Obtenidos</strong></p>
-      <ul></ul>
+      <ul>
+        <li>El sistema muestra el error esperado y continua el proceso de consolidación de LPN.</li>
+      </ul>
     </div>
 
     <hr class="separate" id="escenario21">
 
-    <!-- Escenario 21 -->
-    <div>
-      <h3>
-        Escenario 21: Consolidación
-      </h3>
-
-      <p><strong>Descripción del escenario:</strong></p>
-      <ul></ul>
-
-      <p><strong>Pasos:</strong></p>
-      <ol></ol>
-
-      <p><strong>Resultado Esperado:</strong></p>
-      <ul></ul>
-
-      <p><strong>Resultados Obtenidos</strong></p>
-      <ul></ul>
-    </div>
-
-    <hr class="separate">
   </main>
 
 
