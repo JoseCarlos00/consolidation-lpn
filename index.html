@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consolidacion de LPNs</title>
+  <title>Consolidación de LPNs</title>
 
   <link rel="shortcut icon" href="./scale.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+
+  <script type="module" src="index.js"></script>
 </head>
 
 <body>
@@ -16,7 +18,178 @@
     LPNs
   </h1>
 
+  <details id="escenario-prueba-indice" open>
+    <summary>Escenarios de Prueba</summary>
+    <ul>
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="error">
+          <a href="#escenario1">Escenario 1:</a>
+          <span class="description">No muestra mensaje de error al consolidar FROM_LP BF</span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="error">
+          <a href="#escenario2">Escenario 2:</a>
+          <span class="description">No muestra mensaje de error, elimina el FROM_LP y no ajusta el FROM_LP BF, crea un
+            nuevo registro del FROM_LP con compañía FM</span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario3">Escenario 3:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario4">Escenario 4:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario5">Escenario 5:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario6">Escenario 6:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario7">Escenario 7:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario8">Escenario 8:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario9">Escenario 9:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario10">Escenario 10:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario11">Escenario 11:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario12">Escenario 12:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario13">Escenario 13:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario14">Escenario 14:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="susses">
+          <a href="#escenario15">Escenario 15:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="default">
+          <a href="#escenario16">Escenario 16:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="default">
+          <a href="#escenario17">Escenario 17:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="default">
+          <a href="#escenario18">Escenario 18:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="default">
+          <a href="#escenario19">Escenario 19:</a><span class="description"></span>
+        </label>
+      </li>
+
+      <li>
+        <span class="mark"></span>
+        <label>
+          <input type="checkbox" hidden="hidden" data-sts="default">
+          <a href="#escenario20">Escenario 20:</a><span class="description"></span>
+        </label>
+      </li>
+    </ul>
+  </details>
+
+
   <main>
+    <hr class="separate" id="escenario1">
+
     <blockquote class="quote">
       <h2>Escenarios de Prueba: COMPANY</h2>
     </blockquote>
@@ -24,18 +197,18 @@
     <!-- Escenario 1 -->
     <div>
       <h3>
-        Escenario : Compañia de LPN &quot;from merge&quot; no es valida o es bodega fiscal (<code>BF</code>) ✅
+        Escenario 1: Compañía de LPN &quot;from merge&quot; no es valida o es bodega fiscal (<code>BF</code>) ✅
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
       <ul>
-        <li>La compañia del LPN &quot;from merge&quot; no es valida.</li>
+        <li>La Compañía del LPN &quot;from merge&quot; no es valida.</li>
       </ul>
 
       <p><strong>Pasos</strong></p>
       <ol>
-        <li>Intentar consolidar la compañia del LPN &quot;from merge&quot; con &quot;BF&quot;</li>
-        <li>Verificar si la compañia de LPN &quot;from merge&quot; es valida.</li>
+        <li>Intentar consolidar la Compañía del LPN &quot;from merge&quot; con &quot;BF&quot;</li>
+        <li>Verificar si la Compañía de LPN &quot;from merge&quot; es valida.</li>
       </ol>
 
       <p><strong>Resultados Esperados</strong></p>
@@ -50,24 +223,24 @@
         <li>El sistema muestra el error esperado y detiene el proceso.</li>
       </ul>
     </div>
-    <hr class="separate">
+    <hr class="separate" id="escenario2">
 
     <!-- Escenario 2 -->
     <div>
       <h3 class="important">
-        Escenario 2: Compañia de LPN &quot;from merge&quot; es diferente a la compañia del LPN &quot;to merge&quot;
+        Escenario 2: Compañía de LPN &quot;from merge&quot; es diferente a la Compañía del LPN &quot;to merge&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
       <ul>
-        <li>La compañia del LPN &quot;from merge&quot; es diferente a la compañia del LPN &quot;to merge&quot;.</li>
+        <li>La Compañía del LPN &quot;from merge&quot; es diferente a la Compañía del LPN &quot;to merge&quot;.</li>
       </ul>
 
       <p><strong>Pasos</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
-        <li>Verificar si la compañia de LPN &quot;to merge&quot; es valida no BF.</li>
-        <li>Verificar si la compañia de LPN &quot;to merge&quot; es igual a la compañia del LPN &quot;from merge&quot;.
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
+        <li>Verificar si la Compañía de LPN &quot;to merge&quot; es valida no BF.</li>
+        <li>Verificar si la Compañía de LPN &quot;to merge&quot; es igual a la Compañía del LPN &quot;from merge&quot;.
         </li>
       </ol>
 
@@ -83,11 +256,13 @@
 
       <p><strong class="underline">Resultados Obtenidos</strong></p>
       <ul>
-        <li>El sistema no muestra ningun error y el proceso continua.</li>
+        <li>El sistema no muestra ningún error.</li>
+        <li>Se elimina el LPN &quot;from merge&quot;.</li>
+        <li>No se ajusta el LPN &quot;to merge&quot;.</li>
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario3">
 
     <blockquote class="quote">
       <h2 id="escenarios-de-prueba-lpns">Escenarios de Prueba: LPNs</h2>
@@ -96,7 +271,7 @@
     <!-- Escenario 3 -->
     <div>
       <h3>
-        Escenario 3: LPN &quot;from merge&quot; es una &quot;LPN Padre&quot; ✅
+        Escenario 3: LPN &quot;from merge&quot; es una &quot;LPN Padre&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -105,7 +280,7 @@
       </ul>
       <p><strong>Pasos</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Verificar si el LPN &quot;from merge&quot; ingresado es valido</li>
       </ol>
 
@@ -122,12 +297,12 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario4">
 
     <!-- Escenario 4 -->
     <div>
       <h3>
-        Escenario 4: LPN &quot;from merge&quot; no existe ✅
+        Escenario 4: LPN &quot;from merge&quot; no existe
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -137,13 +312,13 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Validar si el LPN &quot;from merge&quot; existe.</li>
       </ol>
 
       <p><strong>Resultado Esperado:</strong></p>
       <ul>
-        <li>El sistema muestra un error: <code>License plate does not exist.</code> y detiene elproceso</li>
+        <li>El sistema muestra un error: <code>License plate does not exist.</code> y detiene el proceso</li>
       </ul>
 
       <p><strong class="underline">Resultados Obtenidos</strong></p>
@@ -152,7 +327,7 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario5">
 
     <!-- Escenario 5 -->
     <div>
@@ -167,7 +342,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Validar si el LPN &quot;to merge&quot; existe.</li>
       </ol>
 
@@ -192,12 +367,12 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario6">
 
     <!-- Escenario 6 -->
     <div>
       <h3>
-        Escenario 6: LPN &quot;to merge&quot; es el mismo que el LPN &quot;from merge&quot; ✅
+        Escenario 6: LPN &quot;to merge&quot; es el mismo que el LPN &quot;from merge&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -207,7 +382,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Validar si el LPN &quot;to merge&quot; existe.</li>
       </ol>
 
@@ -223,7 +398,7 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario7">
 
     <!-- Escenario 7 -->
     <div>
@@ -238,7 +413,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Validar si el LPN &quot;to merge&quot; existe y es un <code>parent_logistic_unit</code>.</li>
       </ol>
 
@@ -263,7 +438,7 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario8">
 
     <blockquote class="quote">
       <h2>Escenarios de Prueba: LOCATIONs</h2>
@@ -294,7 +469,7 @@
             <li>
               <p><strong>Resultado Adicional Obtenido:</strong></p>
               <ul>
-                <li>El desarrolo continua</li>
+                <li>El desarrollo continua</li>
               </ul>
             </li>
           </ul>
@@ -308,12 +483,13 @@
 
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario9">
 
     <!-- Escenario 9 -->
     <div>
       <h3>
-        Escenario 9: TO_LOCATION &quot;to merge&quot; es diferente al location del TO_LPN &quot;to merge&quot;
+        Escenario 9: El TO_LOCATION &quot;to merge&quot; es diferente al LOCATION registrado del TO_LPN &quot;to
+        merge&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -329,7 +505,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Validar si la ubicación destino &quot;to merge&quot;.</li>
       </ol>
 
@@ -354,12 +530,12 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario10">
 
     <!-- Escenario 10 -->
     <div>
       <h3>
-        Escenario 10 TO_LOCATION &quot;to merge&quot; es igual al location del TO_LPN &quot;to merge&quot;
+        Escenario 10: El TO_LOCATION &quot;to merge&quot; es igual al location del TO_LPN &quot;to merge&quot;
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -375,7 +551,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Validar si la ubicación destino &quot;to merge&quot;.</li>
       </ol>
 
@@ -394,16 +570,56 @@
       </ul>
     </div>
 
-    <blockquote class="quote">
-      <h2>Escenarios de Prueba: QUANTITY</h2>
-    </blockquote>
-
-    <hr class="separate">
+    <hr class="separate" id="escenario11">
 
     <!-- Escenario 11 -->
     <div>
       <h3>
-        Escenario 11: QUANTITY &quot;from merge&quot; null o vacía o cero✅
+        Escenario 11: El TO_LOCATION &quot;to merge&quot; es diferente al location del TO_LPN &quot;to merge&quot;
+      </h3>
+
+      <p><strong>Descripción del escenario:</strong></p>
+      <ul>
+        <li>El sistema tiene registrado el LPN &quot;from merge&quot;</li>
+        <li>El sistema tiene registrado el LOCATION &quot;from merge&quot;</li>
+        <li>El sistema tiene registrado un from QUANTITY valido</li>
+        <li>El sistema tiene registrado el LPN &quot;to merge&quot; en <em>la distinta ubicación</em> del LPN &quot;to
+          merge&quot;
+        </li>
+        <li>La ubicación destino &quot;to merge&quot; es diferente a la ubicación origen &quot;to merge&quot;</li>
+      </ul>
+
+      <p><strong>Pasos:</strong></p>
+      <ol>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
+        <li>Validar si la ubicación destino &quot;to merge&quot;.</li>
+      </ol>
+
+      <p><strong>Resultado Esperado:</strong></p>
+      <ul>
+        <li>
+          <p>El proceso de consolidación de LPN termina correctamente.</p>
+        </li>
+      </ul>
+
+      <p><strong class="underline">Resultados Obtenidos</strong></p>
+      <ul>
+        <li>
+          <p>El proceso de consolidación de LPN termina correctamente.</p>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="separate" id="escenario12">
+
+    <blockquote class="quote">
+      <h2>Escenarios de Prueba: QUANTITY</h2>
+    </blockquote>
+
+    <!-- Escenario 12 -->
+    <div>
+      <h3>
+        Escenario 12: QUANTITY &quot;from merge&quot; null o vacía o cero✅
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -428,12 +644,12 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario13">
 
-    <!-- Escenario 12 -->
+    <!-- Escenario 13 -->
     <div>
       <h3>
-        Escenario 12: QUANTITY &quot;from merge&quot; es negativo ✅
+        Escenario 13: QUANTITY &quot;from merge&quot; es negativo ✅
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -460,12 +676,12 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario14">
 
-    <!-- Escenario 13 -->
+    <!-- Escenario 14 -->
     <div>
-      <h3 class="important">
-        Escenario 13: QUANTITY &quot;from merge&quot; es mayor a la cantidad original del LPN ❎
+      <h3>
+        Escenario 14: QUANTITY &quot;from merge&quot; es mayor a la cantidad original del LPN
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -486,24 +702,25 @@
       <ul>
         <small>Verificar mensaje de error</small>
         <li>El sistema muestra un error:
-          <code>Adjustment failure. Quantity is is greater than the allowed amount</code>.
+          <code>Source LPN does not have enough quantity to move specified
+          quantity. Cannot Merge LPN.</code>
         </li>
       </ul>
 
       <p><strong class="underline">Resultados Obtenidos</strong></p>
       <ul>
-        <li>No se muestra ningun mensaje de error y continua de consolidación de LPN.<strong> Ajustado el
+        <li>No se muestra ningún mensaje de error y continua de consolidación de LPN.<strong> Ajustado el
             TO_LPN</strong>
         </li>
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario15">
 
-    <!-- Escenario 14 -->
+    <!-- Escenario 15 -->
     <div>
       <h3>
-        Escenario 14: QUANTITY &quot;from merge&quot; es menor a la cantidad original del LPN ❎
+        Escenario 15: QUANTITY &quot;from merge&quot; es menor a la cantidad original del LPN
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -535,16 +752,16 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario16">
 
     <blockquote class="quote">
-      <h2>Escenarios de Prueba: Consolidacion de LPN</h2>
+      <h2>Escenarios de Prueba: Consolidación de LPN</h2>
     </blockquote>
 
-    <!-- Escenario 15 -->
+    <!-- Escenario 16 -->
     <div>
       <h3>
-        Escenario 15: Consolidación exitosa con eliminación de LPN &quot;from merge&quot; ❎
+        Escenario 16: Consolidación exitosa con eliminación de LPN &quot;from merge&quot; ❎
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -557,7 +774,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Solicitar los LPNs y datos asociados.</li>
         <li>Validar que los datos sean correctos.</li>
         <li>Ajustar la cantidad en el LPN &quot;to merge&quot;.</li>
@@ -578,12 +795,12 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario17">
 
-    <!-- Escenario 16 -->
+    <!-- Escenario 17 -->
     <div>
       <h3>
-        Escenario 16: Consolidación parcial con ajuste negativo en LPN &quot;from merge&quot; ❎
+        Escenario 17: Consolidación parcial con ajuste negativo en LPN &quot;from merge&quot; ❎
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -597,7 +814,7 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Solicitar los LPNs y datos asociados.</li>
         <li>Validar que los datos sean correctos.</li>
         <li>Ajustar la cantidad en el LPN &quot;to merge&quot;.</li>
@@ -636,21 +853,21 @@
       </ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario18">
 
     <blockquote class="quote">
-      <h2>Escenarios de Prueba: Consolidacion de STATUS</h2>
+      <h2>Escenarios de Prueba: Consolidación de STATUS</h2>
     </blockquote>
 
-    <!-- Escenario 17 -->
+    <!-- Escenario 18 -->
     <div>
       <h3>
-        Escenario 17: Consolidación cuando FROM_LOCATION queda vacia
+        Escenario 18: Consolidación cuando FROM_LOCATION queda vacía
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
       <ul>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>El LPN "from merge" es un numero entero positivo</li>
       </ul>
 
@@ -664,12 +881,12 @@
       <ul></ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario19">
 
-    <!-- Escenario 18 -->
+    <!-- Escenario 19 -->
     <div>
       <h3>
-        Escenario 18: Consolidación con un FROM_LPN en estado de &quot;Held&quot;
+        Escenario 19: Consolidación con un FROM_LPN en estado de &quot;Held&quot;
         y
         TO_LPN en estado de &quot;Available&quot;
       </h3>
@@ -685,9 +902,9 @@
 
       <p><strong>Pasos:</strong></p>
       <ol>
-        <li>Iniciar el proceso de <code>Adjuste LP Consolidacion</code>.</li>
+        <li>Iniciar el proceso de <code>Adjuste LP Consolidación</code>.</li>
         <li>Verificar que el FROM_LPN y el TO_LPN estén en los estados correctos</li>
-        <li>Verificar si es una consolidacion de LPN <strong><i>completa</i></strong> o <strong><i>parcial</i></strong>
+        <li>Verificar si es una Consolidación de LPN <strong><i>completa</i></strong> o <strong><i>parcial</i></strong>
         </li>
       </ol>
 
@@ -703,12 +920,12 @@
       <ul></ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario20">
 
-    <!-- Escenario 19 -->
+    <!-- Escenario 20 -->
     <div>
       <h3>
-        Escenario 19: Consolidación con un FROM_LPN en estado de &quot;Available&quot;
+        Escenario 20: Consolidación con un FROM_LPN en estado de &quot;Available&quot;
         y
         TO_LPN en estado de &quot;Held&quot;
       </h3>
@@ -726,12 +943,12 @@
       <ul></ul>
     </div>
 
-    <hr class="separate">
+    <hr class="separate" id="escenario21">
 
-    <!-- Escenario 20 -->
+    <!-- Escenario 21 -->
     <div>
       <h3>
-        Escenario 20: Consolidación
+        Escenario 21: Consolidación
       </h3>
 
       <p><strong>Descripción del escenario:</strong></p>
@@ -790,7 +1007,7 @@
         </svg>
       </i>
 
-      <small style="margin-top: -4px; display: block;">Adjuste LP Consolidacion.</small>
+      <small style="margin-top: -4px; display: block;">Adjuste LP Consolidación.</small>
     </div>
   </footer>
 
