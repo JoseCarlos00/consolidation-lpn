@@ -18,8 +18,22 @@
     LPNs
   </h1>
 
+  <div class="button-action-container">
+    <label><input id="collapse-all" type="checkbox">Colapsar todo</input> Colapsar todo</label>
+  </div>
+
+  <script>
+    const collapseAllButton = document.getElementById('collapse-all');
+    const collapseAll = (checked) => document.querySelectorAll('details').forEach(item => {
+      item.open = checked;
+    });
+
+    collapseAllButton.addEventListener('change', (e) => { collapseAll(!e.target.checked); })
+
+  </script>
+
   <details id="escenario-prueba-indice">
-    <summary>Escenarios de Prueba</summary>
+    <summary>Indice</summary>
     <ul>
       <li>
         <label>

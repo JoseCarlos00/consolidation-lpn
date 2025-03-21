@@ -95,6 +95,15 @@ footer {
 	margin-top: 50px;
 }
 
+.button-action-container {
+	label {
+		color: #bebebe;
+		font-weight: bold;
+	}
+
+	margin-bottom: 50px;
+}
+
 @media (width <= 500px) {
 	body {
 		margin-inline: 12px;
