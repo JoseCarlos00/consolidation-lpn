@@ -32,25 +32,24 @@
 
   </script>
 
-  <details id="escenario-prueba-indice">
+  <details id="escenario-prueba-indice" open>
     <summary>Indice</summary>
     <ul>
       <li>
         <label>
           <span class="mark"></span>
-          <input type="checkbox" hidden="hidden" data-sts="error">
+          <input type="checkbox" hidden="hidden" data-sts="susses">
           <a href="#escenario1">Escenario 1:</a>
-          <span class="description">No muestra mensaje de error al consolidar FROM_LP BF</span>
+          <span class="description"></span>
         </label>
       </li>
 
       <li>
         <label>
           <span class="mark"></span>
-          <input type="checkbox" hidden="hidden" data-sts="error">
+          <input type="checkbox" hidden="hidden" data-sts="susses">
           <a href="#escenario2">Escenario 2:</a>
-          <span class="description">No muestra mensaje de error, elimina el FROM_LP y no ajusta el FROM_LP BF, crea un
-            nuevo registro del FROM_LP con compañía FM</span>
+          <span class="description"></span>
         </label>
       </li>
 
@@ -73,8 +72,8 @@
       <li>
         <label>
           <span class="mark"></span>
-          <input type="checkbox" hidden="hidden" data-sts="susses">
-          <a href="#escenario5">Escenario 5:</a><span class="description"></span>
+          <input type="checkbox" hidden="hidden" data-sts="error">
+          <a href="#escenario5">Escenario 5:</a><span class="description">&ensp;No muestra el mensaje esperado</span>
         </label>
       </li>
 
@@ -89,24 +88,24 @@
       <li>
         <label>
           <span class="mark"></span>
-          <input type="checkbox" hidden="hidden" data-sts="susses">
-          <a href="#escenario7">Escenario 7:</a><span class="description"></span>
+          <input type="checkbox" hidden="hidden" data-sts="error">
+          <a href="#escenario7">Escenario 7:</a><span class="description">&ensp;No muestra el mensaje esperado</span>
         </label>
       </li>
 
       <li>
         <label>
           <span class="mark"></span>
-          <input type="checkbox" hidden="hidden" data-sts="susses">
-          <a href="#escenario8">Escenario 8:</a><span class="description"></span>
+          <input type="checkbox" hidden="hidden" data-sts="error">
+          <a href="#escenario8">Escenario 8:</a><span class="description">&ensp;No muestra el mensaje esperado</span>
         </label>
       </li>
 
       <li>
         <label>
           <span class="mark"></span>
-          <input type="checkbox" hidden="hidden" data-sts="susses">
-          <a href="#escenario9">Escenario 9:</a><span class="description"></span>
+          <input type="checkbox" hidden="hidden" data-sts="error">
+          <a href="#escenario9">Escenario 9:</a><span class="description">&ensp;No muestra el mensaje esperado</span>
         </label>
       </li>
 
@@ -214,7 +213,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 1: Compañía de LPN &quot;from merge&quot; no es valida o es
             bodega fiscal (<code>BF</code>)
           </h3>
@@ -251,7 +250,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 2: Compañía de LPN &quot;from merge&quot; es diferente a la Compañía del LPN &quot;to merge&quot;
           </h3>
         </summary>
@@ -274,18 +273,14 @@
           <p><strong>Resultados Esperados</strong></p>
           <ul>
             <small>Verificar mensaje de error</small>
-            <li>El sistema muestra un error: <code>Adjustment failure. The destination company is different.</code> y
-              detiene
-              el
-              proceso de consolidación de LPN.
+            <li>El sistema muestra un error: <code>Destination LPN has a different company. Cannot Merge LPN.</code> y
+              continua el proceso de consolidación de LPN.
             </li>
           </ul>
 
           <p><strong class="underline">Resultados Obtenidos</strong></p>
           <ul>
-            <li>El sistema no muestra ningún error.</li>
-            <li>Se elimina el LPN &quot;from merge&quot;.</li>
-            <li>No se ajusta el LPN &quot;to merge&quot;.</li>
+            <li>El sistema no muestra ningún error esperado y continua el proceso.</li>
           </ul>
         </div>
       </details>
@@ -304,7 +299,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 3: LPN &quot;from merge&quot; es una &quot;LPN Padre&quot;
           </h3>
         </summary>
@@ -340,7 +335,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 4: LPN &quot;from merge&quot; no existe
           </h3>
         </summary>
@@ -375,7 +370,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="error"></label>
             Escenario 5: LPN &quot;to merge&quot; no existe
           </h3>
         </summary>
@@ -396,20 +391,16 @@
           <ul>
             <li>
               <p>El sistema muestra un error: <code>Destination LPN for merge must be specified.</code></p>
-              <ul>
-                <li>
-                  <p><strong>Resultado Adicional Obtenido:</strong></p>
-                  <ul>
-                    <li>Se detiene el proceso de consolidación de LPN.</li>
-                  </ul>
-                </li>
-              </ul>
             </li>
+            <li>Continua con el proceso de consolidación de LPN.</li>
           </ul>
 
           <p><strong class="underline">Resultados Obtenidos</strong></p>
           <ul>
-            <li>El sistema muestra el error esperado y detiene el proceso de consolidación de LPN.</li>
+            <!-- <li>El sistema muestra el error esperado y detiene el proceso de consolidación de LPN.</li> -->
+            <li>El sistema no muestra el mensaje esperado</li>
+            <li>Mensaje de error obtenido: <code>Destination LPN has a different company. Cannot Merge LPN.</code></li>
+            <li>El proceso de consolidación de LPN no continúa</li>
           </ul>
         </div>
       </details>
@@ -420,7 +411,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 6: LPN &quot;to merge&quot; es el mismo que el LPN &quot;from merge&quot;
           </h3>
         </summary>
@@ -429,6 +420,7 @@
           <p><strong>Descripción del escenario:</strong></p>
           <ul>
             <li>El LPN &quot;to merge&quot; existe en el sistema.</li>
+            <li>El FROM_LOCATION y el TO_LOCATION son ubicaciones validas.</li>
           </ul>
 
           <p><strong>Pasos:</strong></p>
@@ -457,7 +449,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="error"></label>
             Escenario 7: LPN &quot;to merge&quot; es un LPN Padre
           </h3>
         </summary>
@@ -479,20 +471,16 @@
           <ul>
             <li>
               <p>El sistema muestra un error: <code>Cannot adjust parent license plate.</code></p>
-              <ul>
-                <li>
-                  <p><strong>Resultado Adicional Obtenido:</strong></p>
-                  <ul>
-                    <li>Se detiene el proceso de consolidación de LPN.</li>
-                  </ul>
-                </li>
-              </ul>
             </li>
+            <li>Continua con el proceso de consolidación de LPN.</li>
           </ul>
 
           <p><strong class="underline">Resultados Obtenidos</strong></p>
           <ul>
-            <li>El sistema muestra el error esperado y detiene el proceso de consolidación de LPN.</li>
+            <!-- <li>El sistema muestra el error esperado y detiene el proceso de consolidación de LPN.</li> -->
+            <li>El sistema no muestra el mensaje esperado</li>
+            <li>Mensaje de error obtenido: <code>Destination LPN has a different company. Cannot Merge LPN.</code></li>
+            <li>El proceso de consolidación de LPN no continúa</li>
           </ul>
         </div>
       </details>
@@ -510,8 +498,8 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
-            Escenario 8: TO_LOCATION &quot;to merge&quot; no existe ✅
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="error"></label>
+            Escenario 8: TO_LOCATION &quot;to merge&quot; no existe
           </h3>
         </summary>
 
@@ -531,20 +519,16 @@
           <ul>
             <li>
               <p>El sistema muestra un error: <code>Location does not exist.</code></p>
-              <ul>
-                <li>
-                  <p><strong>Resultado Adicional Obtenido:</strong></p>
-                  <ul>
-                    <li>El desarrollo continua</li>
-                  </ul>
-                </li>
-              </ul>
             </li>
+            <li>Continua con el proceso de consolidación de LPN.</li>
           </ul>
 
           <p><strong class="underline">Resultados Obtenidos</strong></p>
           <ul>
-            <li>El sistema muestra el error esperado y el proceso de consolidación de LPN continúa.</li>
+            <!-- <li>El sistema muestra el error esperado y el proceso de consolidación de LPN continúa.</li> -->
+            <li>El sistema no muestra el mensaje esperado</li>
+            <li>Mensaje de error obtenido: <code>Destination LPN has a different company. Cannot Merge LPN.</code></li>
+            <li>El proceso de consolidación de LPN no continúa</li>
           </ul>
 
         </div>
@@ -556,7 +540,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="error"></label>
             Escenario 9: El TO_LOCATION &quot;to merge&quot; es diferente al LOCATION registrado del TO_LPN &quot;to
             merge&quot;
           </h3>
@@ -582,22 +566,16 @@
 
           <p><strong>Resultado Esperado:</strong></p>
           <ul>
-            <li>
-              <p>El sistema muestra un error: <code>License plate already exists.</code></p>
-              <ul>
-                <li>
-                  <p><strong>Resultado Adicional Obtenido:</strong></p>
-                  <ul>
-                    <li>Se detiene el proceso de consolidación de LPN.</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+            <li>El sistema muestra un error: <code>License plate already exists.</code></li>
+            <li>Continua el proceso de consolidación de LPN</li>
           </ul>
 
           <p><strong class="underline">Resultados Obtenidos</strong></p>
           <ul>
-            <li>El sistema muestra el error esperado y detiene el proceso de consolidación de LPN.</li>
+            <!-- <li>El sistema muestra el error esperado y detiene el proceso de consolidación de LPN.</li> -->
+            <li>El sistema no muestra el mensaje esperado</li>
+            <li>Mensaje de error obtenido: <code>Destination LPN has a different company. Cannot Merge LPN.</code></li>
+            <li>El proceso de consolidación de LPN no continúa</li>
           </ul>
         </div>
       </details>
@@ -608,7 +586,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 10: El TO_LOCATION &quot;to merge&quot; es igual al location del TO_LPN &quot;to merge&quot;
           </h3>
         </summary>
@@ -653,7 +631,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 11: El TO_LOCATION &quot;to merge&quot; es diferente al location del TO_LPN &quot;to merge&quot;
           </h3>
         </summary>
@@ -706,8 +684,8 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
-            Escenario 12: QUANTITY &quot;from merge&quot; null o vacía o cero✅
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
+            Escenario 12: QUANTITY &quot;from merge&quot; null o vacía o cero
           </h3>
         </summary>
 
@@ -726,11 +704,13 @@
           <p><strong>Resultado Esperado:</strong></p>
           <ul>
             <li>El sistema muestra un error: <code>Quantity Required.</code></li>
+            <li>Continua con el proceso de consolidación de LPN.</li>
           </ul>
 
           <p><strong class="underline">Resultados Obtenidos</strong></p>
           <ul>
-            <li>El sistema muestra el error esperado y continua el proceso de consolidación de LPN.</li>
+            <li>El sistema muestra el error esperado.</li>
+            <li>El proceso de consolidación de LPN se detiene.</li>
           </ul>
         </div>
       </details>
@@ -741,8 +721,8 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
-            Escenario 13: QUANTITY &quot;from merge&quot; es negativo ✅
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
+            Escenario 13: QUANTITY &quot;from merge&quot; es negativo
           </h3>
         </summary>
 
@@ -778,7 +758,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 14: QUANTITY &quot;from merge&quot; es mayor a la cantidad original del LPN
           </h3>
         </summary>
@@ -826,7 +806,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 15: QUANTITY &quot;from merge&quot; es menor a la cantidad original del LPN
           </h3>
 
@@ -878,7 +858,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 16: Consolidación exitosa con eliminación de LPN &quot;from merge&quot;
           </h3>
         </summary>
@@ -923,7 +903,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 17: Consolidación parcial con ajuste negativo en LPN &quot;from merge&quot;
           </h3>
         </summary>
@@ -996,7 +976,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 18: Consolidación cuando FROM_LOCATION queda vacía
           </h3>
         </summary>
@@ -1035,7 +1015,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 19: Consolidación con un FROM_LPN en estado de &quot;Held&quot;
             y
             TO_LPN en estado de &quot;Available&quot;
@@ -1083,7 +1063,7 @@
       <details open>
         <summary>
           <h3>
-            <label><span class="mark"></span> <input type="checkbox" hidden></label>
+            <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
             Escenario 20: Consolidación con un FROM_LPN en estado de &quot;Available&quot;
             y
             TO_LPN en estado de &quot;Held&quot;
@@ -1127,7 +1107,7 @@
 
   <div hidden>
     <h3>
-      <label><span class="mark"></span> <input type="checkbox" hidden></label>
+      <label><span class="mark"></span> <input type="checkbox" hidden data-sts="susses"></label>
       Escenario NUM
     </h3>
 
