@@ -16,17 +16,18 @@ body {
 		list-style: none;
 	}
 
-	.mark {
-		display: inline-block;
-		width: 12px;
-		margin-right: 12px;
-	}
-
 	li a {
 		color: #bebebe;
 		cursor: pointer;
 		font-style: italic;
 	}
+}
+
+.mark {
+	display: inline-block;
+	width: 12px;
+	margin-right: 12px;
+	cursor: pointer;
 }
 
 code {
@@ -48,13 +49,23 @@ h1 code {
 
 .quote {
 	border-left: 4px solid #616161;
-	font-size: 16px;
+	font-size: 1.5em;
 	font-weight: bold;
 	font-style: italic;
 	background-color: #2b2b2b;
 	margin-left: 0;
 	padding-left: 12px;
 	text-align: center;
+}
+
+summary {
+	cursor: pointer;
+
+	h2,
+	h3 {
+		margin: 0;
+		display: inline;
+	}
 }
 
 .separate {
